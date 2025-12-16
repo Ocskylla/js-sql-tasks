@@ -9,6 +9,8 @@ const config = {
 
 export default async (book) => {
   // BEGIN (write your solution here)
-
+  const sql = postgres(config);
+  await sql `INSERT INTO books ${sql(book)}`;
+  await sql.end()
   // END
 };
